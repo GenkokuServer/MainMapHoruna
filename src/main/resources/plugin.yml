@@ -1,0 +1,7 @@
+name: MainMapHoruna
+version: 1.0.0
+main: city.genkoku.mainmaphoruna.MainMapHoruna
+commands:
+  mmh:
+    description: hage
+    usage: hage

@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'city.genkoku'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url = 'https://papermc.io/repo/repository/maven-public/'
+    }
+}
+
+dependencies {
+    implementation group: 'com.destroystokyo.paper', name: 'paper-api', version: '1.16.1-R0.1-SNAPSHOT'
+}
