@@ -14,7 +14,7 @@ public class MMHCommand implements CommandExecutor {
 
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-    if (!sender.hasPermission("mainmaphoruna.moderation")) {
+    if (!sender.hasPermission("mainmaphoruna.operation")) {
       TextComponent nopermMsg = new TextComponent("You are not permitted to execute this command");
       nopermMsg.setColor(ChatColor.DARK_RED);
       sender.sendMessage(nopermMsg);
