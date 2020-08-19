@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +26,7 @@ public class MMHCommandCompleter implements TabCompleter {
       return Collections.emptyList();
 
     if (args[0].equalsIgnoreCase("unset"))
-      return Bukkit.getWorlds().stream().map(World::getName).collect(Collectors.toList());
+      return new ArrayList<>(MainMapHoruna.getThresholds().keySet());
 
     if (args[0].equalsIgnoreCase("set") && args.length == 3)
       return Bukkit.getWorlds().stream().map(World::getName).collect(Collectors.toList());
