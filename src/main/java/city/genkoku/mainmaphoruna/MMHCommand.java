@@ -29,9 +29,9 @@ public class MMHCommand implements CommandExecutor {
     switch (args[0].toLowerCase()) {
       case "reload":
         MainMapHoruna.reloadMMHConfig();
-        TextComponent Reloaded = new TextComponent("Reloaded MMH configuration.");
-        Reloaded.setColor(ChatColor.GRAY);
-        sender.sendMessage(Reloaded);
+        TextComponent reloaded = new TextComponent("Reloaded MMH configuration.");
+        reloaded.setColor(ChatColor.GRAY);
+        sender.sendMessage(reloaded);
         break;
       case "set":
         if (args.length <= 1) {
