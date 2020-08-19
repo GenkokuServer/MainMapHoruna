@@ -112,13 +112,20 @@ public class MMHCommand implements CommandExecutor {
           }
         } else {
           // world is specified
+          if (Bukkit.getServer().getWorlds().stream().map(World::getName).noneMatch(w -> w.equals(args[1]))) {
+            // specified world is not found
+            TextComponent msgWorldNotFound = new TextComponent("The world you specified is not found.");
+            msgWorldNotFound.setColor(ChatColor.DARK_RED);
+            sender.sendMessage(msgWorldNotFound);
+            return true;
+          }
           worldName = args[1];
         }
         if (MainMapHoruna.getThresholds().keySet().stream().noneMatch(w -> w.equals(args[1]))) {
-          // specified world is not found
-          TextComponent msgWorldNotFound = new TextComponent("The world has no restriction.");
-          msgWorldNotFound.setColor(ChatColor.GRAY);
-          sender.sendMessage(msgWorldNotFound);
+          // specified world has no restriction
+          TextComponent msgNoRestrictionFound = new TextComponent("The world has no restriction.");
+          msgNoRestrictionFound.setColor(ChatColor.GRAY);
+          sender.sendMessage(msgNoRestrictionFound);
           return true;
         }
         MainMapHoruna.unsetThreshold(worldName);
